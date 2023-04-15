@@ -1,0 +1,14 @@
+version: '2.2'
+services:
+  db:
+    image: mariadb:latest
+    hostname: mariadb
+    volumes:
+      - ./mariadb:/var/lib/mysql
+      - ./schema:/docker-entrypoint-initdb.d
+    ports:
+      - "33060:3306"
+    environment:
+      - TZ=Asia/Bangkok
+      - MYSQL_ROOT_PASSWORD=123456
+      - "MYSQL_ROOT_HOST=%"

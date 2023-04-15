@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>{{.Website}}</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+      .positive {
+			color: green;
+		}
+
+		.negative {
+			color: red;
+		}
+    </style>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!--
+Ramayana CSS Template
+https://templatemo.com/tm-529-ramayana
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-style.css">
+    <link rel="stylesheet" href="/static/assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+              <div class="logo">
+                <a href="home">{{.Website}}</a>
+              </div>
+            </header>
+
+            <!-- Banner -->
+            <section class="main-banner">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Purchase Date</th>
+                          <th>Purchase Price</th>
+                          <th>Initial Value</th>
+                          <th>Amount</th>
+                          <th>THB</th>
+                          <th>Total profit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{ range $key, $value := .assetsList }}
+                        <tr>
+                          <td>{{ $value.purchaseDate}}</td>
+                          <td>$ {{ $value.purchasePrice}}</td>
+                          <td>$ {{ $value.initialValue}}</td>
+                          <td>{{ $value.amount}}</td>
+                          <td>{{ $value.thaiBaht}}</td>
+                          <td class ='{{ $value.class}}' >$ {{ $value.finalValue}}</td>
+                        <!-- Add more rows as needed -->
+                        {{end}}
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+    </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/static/assets/js/browser.min.js"></script>
+    <script src="/static/assets/js/breakpoints.min.js"></script>
+    <script src="/static/assets/js/transition.js"></script>
+    <script src="/static/assets/js/owl-carousel.js"></script>
+    <script>
+      function openWindow(url) {
+        window.open(url, "_blank", "width=600,height=400");
+      }
+    </script>
+</body>
+
+
+
+</html>
